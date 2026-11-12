@@ -38,7 +38,7 @@ function update_summary(){
   element_points.innerHTML = "Totale point(s)= "+ total_points;
 }
 function doInsert(nom,prenom,points){
-  doInsertRowTable(lignes, nom, prenom, points);
+  doInsertRowTable(lignes+1, nom, prenom, points);
   lignes++;
 }
 
