@@ -17,7 +17,7 @@ const persons = [
   {
     nom: "person",
     prenom: "person",
-    points: 1,
+    points: 15,
   },
 ]
 
@@ -35,7 +35,7 @@ function update_summary(){
   const element_points = document.getElementById("p3");
 
   element_lignes.innerHTML = lignes +" ligne(s)";
-  element_lignes.innerHTML = "Totale point(s)= "+ total_points;
+  element_points.innerHTML = "Totale point(s)= "+ total_points;
 }
 function doInsert(nom,prenom,points){
   doInsertRowTable(lignes, nom, prenom, points);
@@ -85,3 +85,4 @@ function ConsoleTableau(){
 }
 
 init();
+console.log(total_points);
