@@ -24,7 +24,7 @@ const persons = [
 function init(){
   for (const person of persons) {
     doInsert(person.nom,person.prenom,person.points);
-    total_points++;
+    total_points = total_points + person.points;
   }
 
   update_summary();
