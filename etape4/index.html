@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etape1</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div id="table_container">
+        <table>
+            <tr id="ligne1">
+                <td class="col_number">N</td>
+                <td class="col_text">Nom</td>
+                <td class="col_text">Prenom</td>
+                <td class="col_number">Points</td>
+                <td class="col_chkbox">Slect</td>
+            </tr>
+        </table>
+        <div id="cointainer_summary" style="background-color: rgb(218, 218, 218); width: 50%;">
+            <p id="p1" style="margin-left: 10px; margin-right: auto;">0 ligne(s)</p>
+            <p id="p2"></p>
+            <p id="p3" style="margin-right: 10px">Totale point(s)= 0</p>
+        </div>
+        <div id="button-bottom">
+            <button onclick="doInsert('nom','prenom', 10)">Ajouter</button>
+            <button onclick="ConsoleTableau()">Console Tableau</button>
+        </div>
+        </div>
+</body>
+
+</html>

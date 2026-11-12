@@ -1,0 +1,26 @@
+*{
+    font-family: Calibri, sans-serif;
+}
+
+table{
+    height: 20px;
+    width: 50%;
+    margin-top: 10px;
+}
+
+table,td,th{
+    border: 2.7px solid lightgray;
+    border-collapse: collapse;
+    text-align: center;
+}
+#ligne1{
+    background-color: rgb(46, 118, 167);
+    color: white;
+    font-weight: bold;
+}
+#table_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
