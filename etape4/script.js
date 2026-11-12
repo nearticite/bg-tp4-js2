@@ -1,7 +1,7 @@
 "use strict"
 
 let total_points= 0;
-let lignes = 1;
+let lignes = 0;
 
 const persons = [
   {
