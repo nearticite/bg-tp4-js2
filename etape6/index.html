@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etape1</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div id="table_container">
+        <div class="form_container">
+        <div class="form_group">
+            <label class="form_label"> Nom :</label>
+            <input type="text" id="form_nom" class="form_field"/>
+        </div>
+        <div class="form_group">
+            <label class="form_label"> Prenom :</label>
+            <input type="text" id="form_prenom" class="form_field"/>
+        </div>
+        <div class="form_group">
+            <label class="form_label"> Points :</label>
+            <input type="text" id="form_points" class="form_field"/>
+        </div>
+            <button onclick="doNewData()" class="btn-add">Ajouter</button>
+        </div>
+
+        <table>
+            <tr id="ligne1">
+                <td class="col_number">N</td>
+                <td class="col_text">
+                    <div>
+                        <p>Nom</p>
+                    </div>
+                </td>
+                <td class="col_text">
+                    <div>
+                        <p>Prenom</p>
+                        </p>
+                    </div></td>
+                <td class="col_number">
+                    <div>
+                        <p>Points</p>
+                    </div>
+                </td>
+                <td class="col_chkbox">Select</td>
+            </tr>
+        </table>
+        <div id="cointainer_summary" style="background-color: rgb(218, 218, 218); width: 50%;">
+            <p id="p1" style="margin-left: 10px; margin-right: auto;">0 ligne(s)</p>
+            <p id="p2"></p>
+            <p id="p3" style="margin-right: 10px">Totale point(s)= 0</p>
+        </div>
+        <div id="container_btn">
+            <button style="background-color: rgb(30, 183, 210);color: white; font-weight: bold; padding: 6px; border: none; font-size: 15px;" onclick="filtreNom(this)">Afficher Asc</button>
+            <button style="background-color: rgb(30, 210, 84);color: white; font-weight: bold; padding: 6px; border: none; font-size: 15px;" onclick="filtrePrenom(this)">Afficher Asc</button>
+            <button style="background-color: rgb(30, 123, 210);color: white; font-weight: bold; padding: 6px; border: none; font-size: 15px;" onclick="filtrePoints(this)">Afficher Asc</button>
+            <button style="background-color: rgb(138, 61, 209);color: white; font-weight: bold; padding: 6px; border: none; font-size: 15px;" onclick="colorPoints()">Montrer les admis</button>
+            <button onclick="ConsoleTableau()" class="btn-consol">Console Tableau</button>
+            <button onclick="SelectAll()" style="background-color: chocolate;color: white; font-weight: bold; padding: 6px; border: none; font-size: 15px;">Tout sélectionner</button>
+            <button onclick="deleteRow()" class="btn-del">Supprimer</button>
+        </div>
+        </div>
+</body>
+</html>
