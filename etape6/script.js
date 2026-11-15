@@ -1,16 +1,14 @@
 /*Ici on utilise use strict, vu dans le slide 51 */
 "use strict"
-
-/*Ici on utilise une declaration de variable, vu dans le slide 37 */
-let total_points = 0;
+/*Ici on utilise une declaration de variable , vu dans le slide 37 */
+let total_points= 0;
 let lignes = 0;
-
 /*Ici on utilise les tableaux, vu dans le slide 38 */
 const persons = [
   {
     nom: "person",
     prenom: "person",
-    points: 12,
+    points: 1,
   },
   {
     nom: "person",
@@ -23,244 +21,152 @@ const persons = [
     points: 15,
   },
 ]
-
 /*Ici on utilise une fonction, vu dans le slide 45 */
 function init(){
-  /*Ici on utilise une boucle, vu dans le slide 44 */
+   /*Ici on utilise une boucle, vu dans le slide 44 */
   for (const person of persons) {
-    /*Ici on utilise un appel de fonction, vu dans le slide 47 */
+    /*Ici on utilise un appel de fonction , vu dans le slide 47 */
     doInsert(person.nom,person.prenom,person.points);
-
-    /*Ici on utilise une operation, vu dans le slide 41 */
     total_points = total_points + person.points;
   }
-
-  /*Ici on utilise un appel de fonction, vu dans le slide 47 */
+/*Ici on utilise un appel de fonction , vu dans le slide 47 */
   update_summary();
 }
 
-/*Ici on utilise une fonction, vu dans le slide 45 */
 function update_summary(){
-
-  /*Ici on utilise retrouver un element par id, vu dans le slide 64 */
+  /*Ici on utilise retrouver un element par id , vu dans le slide 64 */
   const element_lignes = document.getElementById("p1");
   const element_points = document.getElementById("p3");
-
-  /*Ici on utilise innerHTML et concatenation, vu dans le slide 90 et slide 33 */
+  /*Ici on utilise une opperation , vu dans le slide 41 */
   element_lignes.innerHTML = lignes +" ligne(s)";
   element_points.innerHTML = "Totale point(s)= "+ total_points;
 }
-
-/*Ici on utilise une fonction, vu dans le slide 45 */
 function doInsert(nom,prenom,points){
-
-  /*Ici on utilise un appel de fonction, vu dans le slide 47 */
+  /*Ici on utilise un appel de fonction , vu dans le slide 47 */
   doInsertRowTable(lignes+1, nom, prenom, points);
-
-  /*Ici on utilise une operation, vu dans le slide 41 */
+   /*Ici on utilise une opperation , vu dans le slide 41 */
   lignes++;
 }
-
 /*Ici on utilise une fonction, vu dans le slide 45 */
 function doInsertRowTable(num,nom,prenom,points){
-
-    /*Ici on utilise le querySelector, vu dans le slide 76 */
+  /*Ici on utilise le querySelector, vu dans le slide 76 */
     const table = document.querySelector("table");
-
-    /*Ici on utilise la methode createElement, vu dans le slide 104 */
+   /*Ici on utilise la methode createElement et appendChild  , vu dans le slide 104 */
     const row = document.createElement("tr");
-
-    /*Ici on utilise setAttribute, vu dans le slide 107 */
     row.setAttribute("class", "row");
 
-    /*Ici on utilise la methode createElement, vu dans le slide 104 */
     const col1 = document.createElement("td");
     const col2 = document.createElement("td");
     const col3 = document.createElement("td");
     const col4 = document.createElement("td");
     const col5 = document.createElement("td");
-
     /*Ici on utilise innerText, vu dans le slide 90 */
     col1.innerText = num;
     col2.innerText = nom;
     col3.innerText = prenom;
     col4.innerText = points;
-
-    /*Ici on utilise createElement, vu dans le slide 104 */
+  /*Ici on utilise l' acces aux attributs, vu dans le slide 92 */
     const checkbox = document.createElement("input");
-
-    /*Ici on utilise l'acces aux attributs, vu dans le slide 92 */
     checkbox.type = "checkbox";
-
-    /*Ici on utilise la methode appendChild, vu dans le slide 104 */
     col5.appendChild(checkbox);
-
     /*Ici on utilise setAttribute, vu dans le slide 107 */
     col1.setAttribute("class","col_number");
     col2.setAttribute("class","col_text");
     col3.setAttribute("class","col_text");
     col4.setAttribute("class","col_number");
-
-    /* ICI changer chk etape 4 3 */
-    /*Ici on utilise setAttribute, vu dans le slide 107 */
     col5.setAttribute("class","col_chkbox");
-
-    /*Ici on utilise la methode appendChild, vu dans le slide 104 */
+    /*Ici on utilise la methode appendChild  , vu dans le slide 104 */
     row.appendChild(col1);
     row.appendChild(col2);
     row.appendChild(col3);
     row.appendChild(col4);
     row.appendChild(col5);
 
-    /*Ici on utilise la methode appendChild, vu dans le slide 104 */
     table.appendChild(row);
 }
 
-/*Ici on utilise une fonction, vu dans le slide 45 */
 function ConsoleTableau(){
-
-  /*Ici on utilise une boucle, vu dans le slide 44 */
+   /*Ici on utilise une boucle, vu dans le slide 44 */
   for (let i = 0; i < persons.length; i++){
-
-    /*Ici on utilise console.log et concatenation, vu dans le slide 33 */
+     /*Ici on utilise console.log et concatenation, vu dans le slide 33 */
     console.log(i +":", persons[i])
   }
 }
-
-/*Ici on utilise un appel de fonction, vu dans le slide 47 */
+/*Ici on utilise un appel de fonction , vu dans le slide 47 */
 init();
+console.log(total_points);
 
-/*Ici on utilise console.log, vu dans le slide 33 */
 function doNewData(){
-
-  /*Ici on utilise retrouver un element par id, vu dans le slide 64 */
+  /*Ici on utilise retrouver un element par id , vu dans le slide 64 */
   const elt_nom = document.getElementById("form_nom") ;
   const elt_prenom = document.getElementById("form_prenom");
   const elt_points = document.getElementById("form_points");
-
-  /*Ici on utilise .value, trouve sur le site W3 page 87 */
+  /*Ici on utilise .value , utilise avec une recherche*/
   let nom = elt_nom.value
   let prenom = elt_prenom.value
-
-  /*Ici on utilise parseInt, demande TP page 53 */
+  /*Ici on utilise parseInt , demande tp page 53 */
   let points = parseInt(elt_points.value)
 
-  /*Ici on utilise une operation et concatenation, vu dans le slide 41 */
-  total_points = points + total_points;
-
+  total_points = total_points + points;
   /*Ici on utilise une condition, vu dans le slide 42 */
-
-  /*Ici on utilise ou, egalite stricte et Number.isNaN, demande TP */
-  if(nom === "" || prenom === "" || Number.isNaN(points)){
-
+  /*Ici on utilise ou et egalite , demande tp page 41 */
+  if(nom === "" || prenom === "" || points===""){
     /*Ici on utilise une alerte, vu dans le slide 34 */
     alert("Formulaire Incomplet !")
-
   } else{
-
-      /*Ici on utilise un appel de fonction, vu dans le slide 47 */
       doInsert(nom,prenom,points);
-
       /*Ici on utilise push, vu dans le slide 38 */
-      persons.push({nom : nom ,prenom : prenom,points : points});
+    persons.push({nom : nom ,prenom : prenom,points : points});
   }
-
-  /*Ici on utilise .value, trouve sur le site W3 page 87 */
   elt_nom.value= ""
   elt_prenom.value = ""
   elt_points.value = ""
 
-  /*Ici on utilise un appel de fonction, vu dans le slide 47 */
-  update_summary(); 
+  update_summary();
 }
 
-/*Ici on utilise une fonction, vu dans le slide 45 */
 function deleteRow(){
-
   /*Ici on utilise une condition, vu dans le slide 42 */
+  /*Ici on utilise ou et egalite , demande tp page 41 */
   if( lignes === 0){
-
-    /*Ici on utilise une alerte, vu dans le slide 34 */
+     /*Ici on utilise une alerte, vu dans le slide 34 */
     alert("Erreure !");
-
-    /*Ici on utilise return pour quitter la fonction */
     return;
   }
-
   /*Ici on utilise le querySelector, vu dans le slide 76 */
+  /*Ici on utilise le querySelectorAll, vu dans le slide 76 */
   const table = document.querySelector("table")
-
-  /*Ici on utilise querySelectorAll, vu dans le slide 76 */
   const liste = table.querySelectorAll(".col_chkbox input")
 
-  /*Ici on utilise une declaration de variable, vu dans le slide 37 */
   let checked = false;
-
   /*Ici on utilise une boucle, vu dans le slide 44 */
   for(const c of liste){
-
-    /*Ici on utilise une condition, vu dans le slide 42 */
-
-    /*Ici on utilise l'acces aux attributs, vu dans le slide 92 */
     if(c.checked){
-
-      /*Ici on utilise une operation, vu dans le slide 41 */
       checked = true;
     }
   }
-
-  /*Ici on utilise une condition, vu dans le slide 42 */
   if(checked === false){
-
-    /*Ici on utilise une alerte, vu dans le slide 34 */
     alert("Selectionner au moins une ligne !");
-
-    /*Ici on utilise return pour quitter la fonction */
     return;
   }
-
-  /*Ici on utilise confirm pour demander une confirmation */
+  /*Ici on utilise confirm, trouve sur le site w3 page 87 */
   const confirmer = confirm("Confirmer la suppression")
-
-  /*Ici on utilise une condition, vu dans le slide 42 */
   if (confirmer === false) {return;}
-
-  /*Ici on utilise querySelectorAll, vu dans le slide 76 */
+   /*Ici on utilise le querySelector, vu dans le slide 76 */
+  /*Ici on utilise le querySelectorAll, vu dans le slide 76 */
   const ligne = document.querySelectorAll("tr.row")
-
-  /*Ici on utilise une boucle for, vu dans le slide 44 */
-  for (let i = ligne.length -1; i>=0;i--){
-
-    /*Ici on utilise une declaration de variable, vu dans le slide 37 */
+   for (let i = ligne.length -1; i>=0;i--){
     let li = ligne[i];
-
-    /*Ici on utilise querySelector, vu dans le slide 76 */
     const z = li.querySelector(".col_chkbox input[type='checkbox']");
-
-    /*Ici on utilise une condition, vu dans le slide 42 */
     if (z.checked){
-
-      /*Ici on utilise parseInt, demande TP page 53 */
-      let points = parseInt(li.cells[3].innerText)
-
-      /*Ici on utilise une operation, vu dans le slide 41 */
+      let points =parseInt(li.cells[3].innerText)
       total_points = total_points-points;
-
-      /*Ici on utilise une operation, vu dans le slide 41 */
       lignes--;
-
-      /*Ici on utilise splice, vu dans le slide 38 */
       persons.splice(i,1);
-
-      /*Ici on utilise la methode remove, vu dans le slide 101 */
       li.remove();
     }
   }
-
-  /*Ici on utilise console.log, vu dans le slide 33 */
   console.log("Supprimer avec succes");
-
-  /*Ici on utilise un appel de fonction, vu dans le slide 47 */
   update_summary();
 }
 
